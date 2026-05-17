@@ -1,0 +1,24 @@
+# Data archives — large files, do not commit
+dataverse_files*.zip
+
+# Generated outputs — reproducible from scripts
+processed/
+figures/
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Jupyter
+.jupyter/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+nohup.out
+*.log
