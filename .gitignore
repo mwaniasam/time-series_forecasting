@@ -18,6 +18,8 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+*.html
+*.pdf
 
 # Logs
 nohup.out
