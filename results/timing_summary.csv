@@ -1,0 +1,4 @@
+Model,Avg Train Time (s),Avg Inference Time (s)
+SARIMA,12.8,0.011
+LSTM,10.2,0.026
+TCN,3.4,0.014
