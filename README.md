@@ -1,10 +1,10 @@
-# 📡 Mobile Network Traffic Forecasting (Milan Dataset)
+# Mobile Network Traffic Forecasting (Milan Dataset)
 
 A comprehensive data engineering and time-series forecasting pipeline built to analyze and predict mobile internet traffic across the city of Milan. This project utilizes the **Telecom Italia Mobile (TIM)** dataset and implements both statistical and deep learning approaches (SARIMA, LSTM, and TCN) to perform highly accurate one-step-ahead forecasting.
 
 ![Milan Spatial Heatmap](figures/fig06_heatmap.png)
 
-## 🏗️ System Architecture & Methodology Justification
+## System Architecture & Methodology Justification
 To ensure absolute robustness and memory safety when handling the raw 5GB dataset, a **hybrid system architecture** was deliberately chosen over a pure notebook approach:
 
 1.  **Standalone Python Scripts (`ingest_data.py`, `run_models.py`):** 
@@ -14,7 +14,7 @@ To ensure absolute robustness and memory safety when handling the raw 5GB datase
     *   *Why?* Notebooks were exclusively reserved for data visualization (EDA), exploratory plotting, and generating the final academic narrative. 
     *   This clear separation of concerns (Heavy Lifting in `.py`, Reporting in `.ipynb`) represents an industry-standard best practice for data engineering.
 
-## 🚀 Key Features & Accomplishments
+## Key Features & Accomplishments
 
 *   **Massive Data Ingestion:** Processed a raw 5GB dataset comprising 62 daily traffic files. Optimized memory overhead by aggregating 10-minute intervals and saving as a heavily compressed columnar Parquet file (~28MB).
 *   **Deep Exploratory Analysis:** Conducted full EDA across 10,000 spatial grids, identifying log-normal traffic distributions, rigid 24-hour seasonalities (ACF/PACF validated), and anomalous public events.
@@ -24,7 +24,7 @@ To ensure absolute robustness and memory safety when handling the raw 5GB datase
     *   `LSTM`: 2-layer Recurrent Network (128 hidden units, 0.2 dropout, Huber Loss).
     *   `TCN`: 5-block Dilated Temporal Convolutional Network.
 
-### 📈 Model Performance (Target Area 4159)
+### Model Performance (Target Area 4159)
 The Neural Networks drastically outperformed the statistical baseline. The **TCN** emerged as the best architecture, matching LSTM's accuracy but training in **1/3rd of the time**.
 
 ![Predictions Area 4159](figures/predictions_area4159.png)
@@ -37,7 +37,7 @@ The Neural Networks drastically outperformed the statistical baseline. The **TCN
 
 ---
 
-## 🛠️ Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -51,7 +51,7 @@ The Neural Networks drastically outperformed the statistical baseline. The **TCN
 └── results/                 # Metrics CSVs and execution timings (Outputs of Step 2)
 ```
 
-## ⚙️ Setup & Execution Guide
+## Setup & Execution Guide
 
 Follow these exact steps to reproduce the entire environment and run the pipeline from scratch.
 
@@ -92,5 +92,5 @@ jupyter notebook
 Open `01_data_handling.ipynb`, `02_eda.ipynb`, and `03_models.ipynb` to view the comprehensive analysis.
 
 ---
-## 📚 References
+## References
 [1] G. Barlacchi et al., "A multi-source dataset of urban life in the city of Milan and the Province of Trentino," Sci. Data, 2015.
